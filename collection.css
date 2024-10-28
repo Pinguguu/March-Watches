@@ -1,0 +1,68 @@
+#montres {
+    padding: 70px 20px;
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+#montres h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    font-family: 'Playfair Display', serif;
+    color: #0e652f;
+}
+
+.montres-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #1b2b2d;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    color: white;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.card .prix {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.card .buy-button {
+    background-color: #b0a057;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.card .buy-button:hover {
+    background-color: #8d7e47;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire - March Watches</title>
+    <link rel="stylesheet" href="typeform.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>MARCH WATCHES</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="histoire.html">Notre Histoire</a></li>
+                <li><a href="montres.html">Collection</a></li>
+                <li><a href="typeform.html">Vos Retours</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Votre expérience avec March Watches</h1>
+    <p>Merci de prendre quelques minutes pour répondre à ce questionnaire et nous aider à améliorer nos produits et services.</p>
+
+    <form id="questionnaire">
+        
+        <div class="form-group">
+            <label for="discovery">1. Comment avez-vous découvert March Watches ?</label><br>
+            <input type="radio" name="discovery" value="Via les réseaux sociaux"> Via les réseaux sociaux<br>
+            <input type="radio" name="discovery" value="Recommandation d’un ami"> Recommandation d’un ami<br>
+            <input type="radio" name="discovery" value="Publicité en ligne"> Publicité en ligne<br>
+            <input type="radio" name="discovery" value="Revue de presse"> Revue de presse<br>
+            <input type="radio" name="discovery" value="Autre"> Autre (veuillez préciser) : 
+            <input type="text" name="discovery_other">
+        </div>
+
+        <div class="form-group">
+            <label for="attraction">2. Quel aspect des montres de March Watches vous attire le plus ?</label><br>
+            <input type="checkbox" name="attraction" value="Design élégant"> Design élégant<br>
+            <input type="checkbox" name="attraction" value="Matériaux de haute qualité"> Matériaux de haute qualité<br>
+            <input type="checkbox" name="attraction" value="Histoire et tradition"> Histoire et tradition<br>
+            <input type="checkbox" name="attraction" value="Technologie et innovation"> Technologie et innovation<br>
+            <input type="checkbox" name="attraction" value="Rapport qualité-prix"> Rapport qualité-prix
+        </div>
+
+        <div class="form-group">
+            <label for="products">3. Quelle est votre satisfaction générale par rapport à notre service ?</label><br>
+            <input type="radio" name="products" value="Montres classiques"> Très satisfaisant(e)<br>
+            <input type="radio" name="products" value="Montres de sport"> Satisfaisant(e)<br>
+            <input type="radio" name="products" value="Montres automatiques"> Moyennement satisfaisant(e)<br>
+            <input type="radio" name="products" value="Montres de luxe en édition limitée"> Insatisfaisant(e)<br>
+        </div>
+
+        <div class="form-group">
+            <label for="suggestions">4. Avez-vous des suggestions pour améliorer nos produits ou services ?</label>
+            <textarea name="suggestions" id="suggestions" rows="4" placeholder="Vos suggestions..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="email">5. Votre email (facultatif) :</label>
+            <input type="email" name="email" id="email" placeholder="Votre adresse email">
+        </div>
+
+        <button type="submit">Envoyer le questionnaire</button>
+    </form>
+
+    <script>
+        document.getElementById('questionnaire').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            let result = {};
+            formData.forEach((value, key) => {
+                if (!result[key]) {
+                    result[key] = value;
+                } else {
+                    if (!Array.isArray(result[key])) {
+                        result[key] = [result[key]];
+                    }
+                    result[key].push(value);
+                }
+            });
+
+            console.log(result);
+            alert("Merci d'avoir rempli le questionnaire !");
+            this.reset();
+        });
+    </script>
+
+    <footer id="contact">
+        <p>&copy; 2024 MARCH WATCHES. Projet Scolaire. Photos : MARCH LA.B</p>
+    </footer>
+
+</body>
+</html>
